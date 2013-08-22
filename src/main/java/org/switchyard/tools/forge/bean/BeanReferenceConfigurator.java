@@ -52,12 +52,12 @@ public class BeanReferenceConfigurator
     * @param out shell output
     * @throws java.io.IOException trouble reading Switchyard config or reading/writing Bean file
     */
-   public void newReference(Project project, final String beanName, final String pkgName, final String referenceName,
+   public void newReference(Project project, final String beanName, final String referenceName,
             final String referenceBeanName) throws java.io.IOException
    {
       final MetadataFacet meta = project.getFacet(MetadataFacet.class);
       final JavaSourceFacet java = project.getFacet(JavaSourceFacet.class);
-
+      String pkgName = project.getFacet(MetadataFacet.class).getTopLevelPackage();
       // Make sure the bean exists
       JavaResource beanFile = project.getProjectRoot().getChildOfType(JavaResource.class,
                "src/main/java/" + meta.getTopLevelPackage().replace(".", "/") + "/" + beanName + "Bean.java");

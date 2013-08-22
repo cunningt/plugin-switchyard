@@ -109,9 +109,8 @@ public class BeanFacetTest
 	   SwitchYardFacet switchYard = facetFactory.install(project, SwitchYardFacet.class);
 	   BeanFacet beanfacet = facetFactory.install(project, BeanFacet.class);
 	   
-	   
-	   beanServiceConfigurator.newBean(project, "org.switchyard.test", "Test");
-	   beanReferenceConfigurator.newReference(project, "Test", "org.switchyard.test", 
+	   beanServiceConfigurator.newBean(project, "Test");
+	   beanReferenceConfigurator.newReference(project, "Test", 
 			   "RefName", "com.test.RefIntf");
 	   
 	   switchYard.saveConfig();	   

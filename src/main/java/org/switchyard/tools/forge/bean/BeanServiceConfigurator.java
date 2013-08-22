@@ -20,6 +20,7 @@
 package org.switchyard.tools.forge.bean;
 
 import org.jboss.forge.addon.projects.Project;
+import org.jboss.forge.addon.projects.facets.MetadataFacet;
 import org.jboss.forge.addon.projects.facets.ResourcesFacet;
 import org.jboss.forge.furnace.services.Exported;
 import org.switchyard.tools.forge.plugin.TemplateResource;
@@ -42,9 +43,11 @@ public class BeanServiceConfigurator
     * @param out shell output
     * @throws java.io.IOException trouble reading/writing SwitchYard config
     */
-   public void newBean(Project project, String pkgName, final String serviceName) throws java.io.IOException
+   public void newBean(Project project, final String serviceName) throws java.io.IOException
    {
-
+	  final MetadataFacet meta = project.getFacet(MetadataFacet.class);
+	  String pkgName = project.getFacet(MetadataFacet.class).getTopLevelPackage();
+	   
       // Create the service interface and implementation
       TemplateResource beanIntf = new TemplateResource(BEAN_INTERFACE_TEMPLATE);
       beanIntf.serviceName(serviceName);
