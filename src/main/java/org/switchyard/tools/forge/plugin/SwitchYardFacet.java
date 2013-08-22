@@ -550,7 +550,7 @@ public class SwitchYardFacet extends AbstractSwitchyardFacet
       getFaceted().setAttribute(CONFIG_ATTR, config);
    }
 
-   private FileResource<?> getSwitchYardConfigFile()
+   public FileResource<?> getSwitchYardConfigFile()
    {
       DirectoryResource metaInf = getFaceted().getProjectRoot().getChildDirectory(
                "src"
