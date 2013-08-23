@@ -46,8 +46,7 @@ public class CamelBindingConfigurator
    public void bindService(
             Project project,
             final String serviceName,
-            final String configURI,
-            final String operationName
+            final String configURI
             )
    {
 

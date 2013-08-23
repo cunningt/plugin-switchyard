@@ -58,6 +58,11 @@ public class BeanReferenceConfigurator
       final MetadataFacet meta = project.getFacet(MetadataFacet.class);
       final JavaSourceFacet java = project.getFacet(JavaSourceFacet.class);
       String pkgName = project.getFacet(MetadataFacet.class).getTopLevelPackage();
+      
+      if (pkgName == null) {
+          throw new IllegalArgumentException("Package name is null.");
+      }
+
       // Make sure the bean exists
       JavaResource beanFile = project.getProjectRoot().getChildOfType(JavaResource.class,
                "src/main/java/" + meta.getTopLevelPackage().replace(".", "/") + "/" + beanName + "Bean.java");

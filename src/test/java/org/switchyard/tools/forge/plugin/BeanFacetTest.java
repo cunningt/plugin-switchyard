@@ -111,7 +111,7 @@ public class BeanFacetTest
 	   
 	   beanServiceConfigurator.newBean(project, "Test");
 	   beanReferenceConfigurator.newReference(project, "Test", 
-			   "RefName", "com.test.RefIntf");
+			   "RefName", "Foo");
 	   
 	   switchYard.saveConfig();	   
 	   switchYard.getSwitchYardConfigFile().getFullyQualifiedName();
